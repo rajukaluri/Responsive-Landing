@@ -1,0 +1,101 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Navigation Menu */
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+#navbar.sticky {
+    background-color: #444;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#navbar .logo h1 {
+    font-size: 1.5rem;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 2rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    transition: all 0.3s ease;
+}
+
+/* Hover Effect on Menu Items */
+.nav-links a:hover {
+    color: #FFD700; /* Change color on hover */
+    border-bottom: 2px solid #FFD700;
+}
+
+/* Section Styling */
+section {
+    padding: 100px 2rem;
+    margin-top: 60px; /* Prevent content from being hidden behind the fixed navbar */
+}
+
+.section-content {
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1.25rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #navbar .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #333;
+        width: 100%;
+        padding: 1rem 0;
+    }
+
+    #navbar.sticky .nav-links {
+        display: flex;
+    }
+
+    #navbar .nav-links li {
+        margin: 1rem 0;
+        text-align: center;
+    }
+}
